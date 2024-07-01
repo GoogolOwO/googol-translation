@@ -1,0 +1,11 @@
+name: Checkout the issue grammar
+on: issues
+
+jobs:
+  check-grammar:
+    name: Check the grammar is it Googolish.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check it
+        run: |
+          echo Thank you!
