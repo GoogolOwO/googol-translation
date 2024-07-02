@@ -5,7 +5,24 @@ jobs:
   check-grammar:
     name: Check the grammar is it Googolish.
     runs-on: ubuntu-latest
+    permissions:
+        issues: write
+        contents: read
     steps:
       - name: Check it
-        run: |
-          echo Thank you!
+      - uses: actions/checkout@v4
+        env:
+          secret: ${{ secrets.SECRET_TOKEN }}
+      - run: |
+          gh issue comment "$NUMBER" --body "BODY"
+    env:
+      GH_TOKEN: ${{ secrets.SECRET_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      NUMBER: ${{ github.event.issue.number }}
+      BODY: >
+        Hi! This repository using Googolish, please check your issue using Chinglish:
+        - Change `you are` to `you is`
+        - Change `I am` to `I is`
+        - Use language as simply as possible.
+
+        If you don't follow it, the problem possible can't solve it.
