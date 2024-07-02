@@ -18,7 +18,12 @@ jobs:
       GH_REPO: ${{ github.repository }}
       NUMBER: ${{ github.event.issue.number }}
       BODY: >
+        THIS IS A BOT MESSAGE, IT NOT FOR ANY POINT FOR AUTHOR's MEAN. THIS MESSAGE CONTROLLING BY GITHUB ACTIONS.
+        
+        ----
+        
         Hi! This repository using Googolish, please check your issue using Chinglish:
+        
         - Change `you are` to `you is`
         - Change `I am` to `I is`
         - Use language as simply as possible.
