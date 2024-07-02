@@ -10,11 +10,9 @@ jobs:
         contents: read
     steps:
       - name: Check it
-      - uses: actions/checkout@v4
         env:
           secret: ${{ secrets.SECRET_TOKEN }}
-      - run: |
-          gh issue comment "$NUMBER" --body "BODY"
+        run: gh issue comment "$NUMBER" --body "$BODY"
     env:
       GH_TOKEN: ${{ secrets.SECRET_TOKEN }}
       GH_REPO: ${{ github.repository }}
